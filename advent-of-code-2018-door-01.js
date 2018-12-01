@@ -3,8 +3,8 @@ const numbers = document.querySelector("body").textContent.split("\n").filter(x 
 const frequencies = new Set([0]);
 let firstSum, sum = 0, firstFrequencyDuplicate;
 do {
-    sum = numbers.reduce((a,b) => {
-        const currentFrequency = eval(a+b);
+    sum = numbers.filter(x => x).reduce((a,b) => {
+        const currentFrequency = a + parseInt(b);
         if(firstFrequencyDuplicate === undefined && frequencies.has(currentFrequency)) {
             firstFrequencyDuplicate = currentFrequency;
         } else {
