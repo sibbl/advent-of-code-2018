@@ -1,6 +1,6 @@
 const input = document.querySelector("body").textContent.split("\n").filter(x => x);
 
-const numbers = input.map(i => parseInt(i));
+const numbers = input.map(i => Number(i));
 const frequencies = new Set([0]);
 let firstSum, sum = 0, firstFrequencyDuplicate;
 do {
