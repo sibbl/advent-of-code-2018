@@ -17,9 +17,6 @@ const countThree = input.map(containsThree).filter(x => x === true).length;
 console.log("Part 1", countTwo * countThree);
 
 const returnWordIfOnlyOneCharacterDifferent = (str1, str2) => {
-    if(str1.length !== str2.length) {
-        return false;
-    }
     for(let i = 0; i < str1.length; i++) {
         const secondPartStartIndex = i+1;
         const str1WithoutSingleChar = str1.substring(0, i) + str1.substring(secondPartStartIndex, str1.length);
@@ -28,7 +25,6 @@ const returnWordIfOnlyOneCharacterDifferent = (str1, str2) => {
             return str1WithoutSingleChar;
         }
     }
-    return undefined;
 }
 
 for(let i = 0; i < input.length; i++) {
