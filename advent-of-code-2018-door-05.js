@@ -16,4 +16,8 @@ const removePairs = (str) => {
 
 console.log("Task 1", removePairs(input).length);
 
-// TBC
+const minLength = "abcdefghijklmnopqrstuvwxyz".split("").map(char => {
+    return removePairs(input.replace(new RegExp(char, "gi"), "")).length;
+}).reduce((acc, cur) => cur < acc ? cur : acc, Number.MAX_VALUE);
+
+console.log("Task 2", minLength);
